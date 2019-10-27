@@ -1,0 +1,23 @@
+{
+  "commands":[
+    "M",
+    "M",
+    "R",
+    "M",
+    "M",
+    "R",
+    "M",
+    "R",
+    "R",
+    "M"
+  ],
+  "position":{
+    "coordinate":{
+      "x":3,
+      "y":3
+    },
+    "direction":{
+      "compass":"E"
+    }
+  }
+}
