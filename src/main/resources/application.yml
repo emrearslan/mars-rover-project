@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: mars-rover-project
+
+server:
+  port: 9070
+  servlet:
+    contextPath: /mars-rover-project
+
+logging:
+  level:
+    org.springframework: INFO
+    com.ea: DEBUG
