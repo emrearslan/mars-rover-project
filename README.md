@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/emrearslan/mars-rover-project.svg?branch=development)](https://travis-ci.org/emrearslan/mars-rover-project)
-[![GitHub license](https://img.shields.io/github/license/keramiozsoy/petshop.svg)](https://github.com/keramiozsoy/petshop/blob/develop/LICENSE)
+[![GitHub license](https://img.shields.io/github/license/emrearslan/mars-rover-project.svg)](https://github.com/emrearslan/mars-rover-project/blob/master/LICENSE)
 ![Version 0.0.1](https://img.shields.io/badge/version-0.0.1-yellow.svg)
 
 # Mars Rover Project
@@ -8,7 +8,7 @@ The project built using gradle with Spring Boot.
 To run project:
 ```
 ./gradlew build
-java -jar build/libs/mars-rover-java.jar
+java -jar build/libs/mars-rover-project-0.0.1-SNAPSHOT.jar
 ```
 
 To run all tests:
