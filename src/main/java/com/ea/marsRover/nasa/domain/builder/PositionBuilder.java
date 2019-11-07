@@ -8,7 +8,7 @@ public class PositionBuilder {
 
     private Coordinate coordinate;
     private Direction direction;
-    private boolean rip;
+    private boolean rip = false;
 
     public Position doBuild() {
         Position position = new Position();

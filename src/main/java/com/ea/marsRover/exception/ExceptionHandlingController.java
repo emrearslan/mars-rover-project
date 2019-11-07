@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 public class ExceptionHandlingController {
 
     @ExceptionHandler(RuntimeException.class)
-    public ResponseEntity<CustomErrorResponse> businessExceptionControl(RuntimeException ex) {
+    public ResponseEntity<CustomErrorResponse> exceptionControl(RuntimeException ex) {
         CustomErrorResponse response = new CustomErrorResponse();
         response.setTimestamp(LocalDateTime.now());
         response.setError(ex.getMessage());
