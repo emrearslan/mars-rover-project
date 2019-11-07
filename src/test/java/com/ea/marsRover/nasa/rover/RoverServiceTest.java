@@ -36,6 +36,7 @@ public class RoverServiceTest {
 
     @BeforeEach
     void setUp() {
+        Coordinate plateau1 = new CoordinateBuilder().x(5).y(5).doBuild();
         Coordinate coordinate1 = new CoordinateBuilder().x(3).y(3).doBuild();
         Direction direction1 = new Compass.East();
         Position position1 = new PositionBuilder().coordinate(coordinate1).direction(direction1).doBuild();
@@ -43,8 +44,9 @@ public class RoverServiceTest {
         List<Command> commands1 = Arrays.asList(Command.L, Command.M, Command.L,
                 Command.M, Command.L, Command.M, Command.L, Command.M, Command.M);
 
-        rover1 = new RoverBuilder().position(position1).commands(commands1).doBuild();
+        rover1 = new RoverBuilder().plateau(plateau1).position(position1).commands(commands1).doBuild();
 
+        Coordinate plateau2 = new CoordinateBuilder().x(5).y(5).doBuild();
         Coordinate coordinate2 = new CoordinateBuilder().x(1).y(2).doBuild();
         Direction direction2 = new Compass.North();
         Position position2 = new PositionBuilder().coordinate(coordinate2).direction(direction2).doBuild();
@@ -52,7 +54,7 @@ public class RoverServiceTest {
         List<Command> commands2 = Arrays.asList(Command.M, Command.M, Command.R,
                 Command.M, Command.M, Command.R, Command.M, Command.R, Command.R, Command.M);
 
-        rover2 = new RoverBuilder().position(position2).commands(commands2).doBuild();
+        rover2 = new RoverBuilder().plateau(plateau2).position(position2).commands(commands2).doBuild();
 
         rovers = Arrays.asList(rover1, rover2);
     }
@@ -60,7 +62,7 @@ public class RoverServiceTest {
     @Test
     public void shouldExploreWithRover() {
         Mockito.when(positionService.changePosition(Mockito.any(Position.class), Mockito.any(Command.class)))
-                .thenReturn(new Position());
+                .thenReturn(rover1.getPosition());
         roverService.explore(rover1);
 
         Mockito.verify(positionService, Mockito.times(rover1.getCommands().size()))
@@ -81,10 +83,10 @@ public class RoverServiceTest {
     @Test
     public void shouldExploresWithRovers() {
         Mockito.when(positionService.changePosition(Mockito.any(Position.class), Mockito.any(Command.class)))
-                .thenReturn(new Position());
+                .thenReturn(rover1.getPosition());
         roverService.explores(rovers);
 
-        int totalCommandSize = rovers.stream().map(c->c.getCommands() == null ? 0 : c.getCommands().size())
+        int totalCommandSize = rovers.stream().map(c -> c.getCommands() == null ? 0 : c.getCommands().size())
                 .reduce(0, Integer::sum);
 
         Mockito.verify(positionService, Mockito.times(totalCommandSize))
@@ -107,6 +109,16 @@ public class RoverServiceTest {
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
             roverService.explores(emptyRovers);
         });
+    }
+
+    @Test
+    public void shouldExploreSetRip() {
+        Coordinate plateau = new CoordinateBuilder().x(1).y(1).doBuild();
+        rover1.setPlateau(plateau);
+
+        Position position = roverService.explore(rover1);
+
+        Assertions.assertTrue(position.isRip(), "Rover not ripped");
     }
 
 }

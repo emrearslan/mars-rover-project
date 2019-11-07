@@ -6,6 +6,7 @@ public class Position {
 
     private Coordinate coordinate;
     private Direction direction;
+    private boolean rip = false;
 
     public Position() {
 
@@ -14,6 +15,12 @@ public class Position {
     public Position(Coordinate coordinate, Direction direction) {
         this.coordinate = coordinate;
         this.direction = direction;
+    }
+
+    public Position(Coordinate coordinate, Direction direction, boolean rip) {
+        this.coordinate = coordinate;
+        this.direction = direction;
+        this.rip = rip;
     }
 
     public Coordinate getCoordinate() {
@@ -30,6 +37,20 @@ public class Position {
 
     public void setDirection(Direction direction) {
         this.direction = direction;
+    }
+
+    public boolean isRip() {
+        return rip;
+    }
+
+    public void setRip(boolean rip) {
+        this.rip = rip;
+    }
+
+    public boolean isMovable(Coordinate plateau) {
+        return !(coordinate.getX() > plateau.getX() ||
+                coordinate.getY() > plateau.getY() ||
+                coordinate.getX() < 0 || coordinate.getY() < 0);
     }
 
     @Override

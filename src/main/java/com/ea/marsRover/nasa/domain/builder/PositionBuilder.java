@@ -8,11 +8,13 @@ public class PositionBuilder {
 
     private Coordinate coordinate;
     private Direction direction;
+    private boolean rip;
 
     public Position doBuild() {
         Position position = new Position();
         position.setCoordinate(coordinate);
         position.setDirection(direction);
+        position.setRip(rip);
         return position;
     }
 
@@ -23,6 +25,11 @@ public class PositionBuilder {
 
     public  PositionBuilder direction(Direction direction) {
         this.direction = direction;
+        return this;
+    }
+
+    public PositionBuilder rip(boolean rip) {
+        this.rip = rip;
         return this;
     }
 }

@@ -1,5 +1,5 @@
 {
-  "commands":[
+  "commands": [
     "L",
     "M",
     "L",
@@ -10,13 +10,17 @@
     "M",
     "M"
   ],
-  "position":{
-    "coordinate":{
-      "x":1,
-      "y":2
+  "plateau": {
+    "x": 5,
+    "y": 5
+  },
+  "position": {
+    "coordinate": {
+      "x": 1,
+      "y": 2
     },
-    "direction":{
-      "compass":"N"
+    "direction": {
+      "compass": "N"
     }
   }
 }

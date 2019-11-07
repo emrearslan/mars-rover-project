@@ -1,6 +1,6 @@
 [
   {
-    "commands":[
+    "commands": [
       "L",
       "M",
       "L",
@@ -11,18 +11,22 @@
       "M",
       "M"
     ],
-    "position":{
-      "coordinate":{
-        "x":1,
-        "y":2
+    "plateau": {
+      "x": 5,
+      "y": 5
+    },
+    "position": {
+      "coordinate": {
+        "x": 1,
+        "y": 2
       },
-      "direction":{
-        "compass":"N"
+      "direction": {
+        "compass": "N"
       }
     }
   },
   {
-    "commands":[
+    "commands": [
       "M",
       "M",
       "R",
@@ -34,13 +38,17 @@
       "R",
       "M"
     ],
-    "position":{
-      "coordinate":{
-        "x":3,
-        "y":3
+    "plateau": {
+      "x": 5,
+      "y": 5
+    },
+    "position": {
+      "coordinate": {
+        "x": 3,
+        "y": 3
       },
-      "direction":{
-        "compass":"E"
+      "direction": {
+        "compass": "E"
       }
     }
   }

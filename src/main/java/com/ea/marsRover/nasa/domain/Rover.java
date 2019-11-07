@@ -5,6 +5,7 @@ import java.util.Objects;
 
 public class Rover {
 
+    private Coordinate plateau;
     private Position position;
     private List<Command> commands;
 
@@ -12,9 +13,18 @@ public class Rover {
 
     }
 
-    public Rover(Position position, List<Command> commands) {
+    public Rover(Coordinate plateau, Position position, List<Command> commands) {
+        this.plateau = plateau;
         this.position = position;
         this.commands = commands;
+    }
+
+    public Coordinate getPlateau() {
+        return plateau;
+    }
+
+    public void setPlateau(Coordinate plateau) {
+        this.plateau = plateau;
     }
 
     public Position getPosition() {
