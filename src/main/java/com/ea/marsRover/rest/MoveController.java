@@ -23,14 +23,14 @@ public class MoveController {
 
     @PostMapping(value = "/move", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ApiOperation(value = "Move Mars Rover", response = Iterable.class)
-    ResponseEntity<Position> position(@RequestBody Rover rover) {
+    ResponseEntity<Position> explore(@RequestBody Rover rover) {
         Position output = roverService.explore(rover);
         return new ResponseEntity<>(output, HttpStatus.OK);
     }
 
     @PostMapping(value = "/moves", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ApiOperation(value = "Move Mars Rover", response = Iterable.class)
-    ResponseEntity<List<Position>> position(@RequestBody List<Rover> rovers) {
+    ResponseEntity<List<Position>> explores(@RequestBody List<Rover> rovers) {
         List<Position> output = roverService.explores(rovers);
         return new ResponseEntity<>(output, HttpStatus.OK);
     }
