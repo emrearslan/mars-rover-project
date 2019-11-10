@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/emrearslan/mars-rover-project.svg?branch=development)](https://travis-ci.org/emrearslan/mars-rover-project)
+[![Build Status](https://travis-ci.org/emrearslan/mars-rover-project.svg?branch=master)](https://travis-ci.org/emrearslan/mars-rover-project)
 [![codecov](https://codecov.io/gh/emrearslan/mars-rover-project/branch/master/graph/badge.svg)](https://codecov.io/gh/emrearslan/mars-rover-project)
 [![GitHub license](https://img.shields.io/github/license/emrearslan/mars-rover-project.svg)](https://github.com/emrearslan/mars-rover-project/blob/master/LICENSE)
 ![Version 0.0.1](https://img.shields.io/badge/version-0.0.1-yellow.svg)
